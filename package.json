@@ -1,0 +1,33 @@
+{
+  "name": "crypto-portfolio-calculator",
+  "version": "1.0.0",
+  "description": "Portfolio Balance Calculator From CSV File",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BahadirYurdakul/crypto-portfolio-calculator.git"
+  },
+  "keywords": [
+    "typescript",
+    "nodejs"
+  ],
+  "author": "Bahadır Yurdakul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BahadirYurdakul/crypto-portfolio-calculator/issues"
+  },
+  "homepage": "https://github.com/BahadirYurdakul/crypto-portfolio-calculator#readme",
+  "dependencies": {
+    "axios": "0.25.0",
+    "dotenv": "^16.0.0",
+    "yargs": "17.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.16",
+    "@types/yargs": "17.0.8",
+    "typescript": "4.5.5"
+  }
+}

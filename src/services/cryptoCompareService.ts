@@ -2,8 +2,6 @@ import { ICryptoDataService } from "./cryptoServiceTypes";
 import { currency, token } from "../models/transaction";
 const axios = require('axios').default;
 
-const multiExchangeRateUrl = 'https://min-api.cryptocompare.com/data/pricemulti';
-
 const cryptoCompareApiConfig = {
     headers: {
         'Content-Type': 'application/json',
@@ -17,12 +15,12 @@ export function cryptoCompare(): ICryptoDataService {
         const fsyms = tokens.join(",");
         const tsyms = currencies.join(",");
         try {
-            const response = await axios.post(multiExchangeRateUrl, { fsyms, tsyms }, cryptoCompareApiConfig);
+            const response = await axios.post(process.env.CRYPRO_COMPARE_MULTI_EXCHANGE_URL, { fsyms, tsyms }, cryptoCompareApiConfig);
             return response.data;
         } catch (ex) {
             console.error(`Error occurred while trying to fetch exchange rates. 
                            Tokens: ${JSON.stringify(tokens)}, Currencies: ${JSON.stringify(currencies)}`, ex);
-            throw new Error("Error occurred because exhange rates cannot be fetched via crypto compare.");
+            throw new Error("Error occurred because exhange rates cannot be fetched via crypto compare api.");
         }
     }
 
